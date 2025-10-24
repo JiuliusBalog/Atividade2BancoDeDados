@@ -14,7 +14,7 @@ CREATE TABLE Livro(
 CREATE TABLE Livro_Autor(
 	LivroCodigo				integer,
 	AutorID_Autor			integer,
-	CONSTRAINT PK_NomeDaTabela PRIMARY KEY (LivroCodigo, AutorID_Autor),
+	CONSTRAINT PK_Livro_Autor PRIMARY KEY (LivroCodigo, AutorID_Autor),
 	FOREIGN KEY(LivroCodigo) REFERENCES Livro(codigo),
 	FOREIGN KEY(AutorID_Autor) REFERENCES Autor(ID_Autor)
 );
@@ -48,4 +48,5 @@ CREATE TABLE Edicao(
 	numero_paginas			integer								CHECK(numero_paginas < 15),
 	qtd_estoque				integer,
 	PRIMARY KEY(ISBN)
+
 );
